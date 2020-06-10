@@ -1,0 +1,14 @@
+{
+  "name": "discord-bot-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple and clean Discord.js bot boilerplate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LordMorgoth",
+  "license": "GNU GPLv3",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  }
+}
