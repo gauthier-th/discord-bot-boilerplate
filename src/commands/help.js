@@ -1,4 +1,5 @@
 const Command = require('../command.js');
+const { prefix } = require('../../base-config.json');
 
 class HelpCommand extends Command {
 	#client;
@@ -18,7 +19,7 @@ class HelpCommand extends Command {
 	 * @param {import('discord.js').Message} message 
 	 */
 	exec(command, args, message) {
-		message.channel.send(this.client.messages.COMMANDS.HELP());
+		message.channel.send(this.client.messages.COMMANDS.HELP(prefix));
 	}
 
 }
