@@ -1,14 +1,16 @@
 const Command = require('../command.js');
 
-class HelpCommand extends Command {
 
+class MemberCountCommand extends Command {
+	#client;
+	#name = "membercount";
+	#aliases = ["mc", "nbmember"];
+	#title = "Nombre d'utilisateurs sur le serveur";
+	#description = "Affiche le nombre d'utilisateurs avec quelques détails sur le serveur";
+	
 	/** @param {import('./client')} client */
 	constructor(client) {
-		super(client);
-		this.name = "help";
-		this.aliases = ["aide", "helps", "aides"];
-		this.title = "Aide";
-		this.description = "Affiche de l'aide pour le bot";
+		super(client);	
 	}
 
 	/**
@@ -31,4 +33,4 @@ class HelpCommand extends Command {
 
 }
 
-module.exports = HelpCommand;
+module.exports = MemberCountCommand;
