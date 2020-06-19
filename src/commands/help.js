@@ -2,11 +2,10 @@ const Command = require('../command.js');
 const { prefix } = require('../../base-config.json');
 
 class HelpCommand extends Command {
-	#client;
-	#name = "help";
-	#aliases = ["aide", "helps", "aides"];
-	#title = "Aide";
-	#description = "Affiche de l'aide pour le bot";
+	_name = "help";
+	_aliases = ["aide", "helps", "aides"];
+	_title = "Aide";
+	_description = "Affiche de l'aide pour le bot";
 
 	/** @param {import('./client')} client */
 	constructor(client) {

@@ -2,11 +2,10 @@ const Command = require('../command.js');
 
 
 class MemberCountCommand extends Command {
-	#client;
-	#name = "membercount";
-	#aliases = ["mc", "nbmember"];
-	#title = "Nombre d'utilisateurs sur le serveur";
-	#description = "Affiche le nombre d'utilisateurs avec quelques détails sur le serveur";
+	_name = "membercount";
+	_aliases = ["mc", "nbmember"];
+	_title = "Nombre d'utilisateurs sur le serveur";
+	_description = "Affiche le nombre d'utilisateurs avec quelques détails sur le serveur";
 	
 	/** @param {import('./client')} client */
 	constructor(client) {

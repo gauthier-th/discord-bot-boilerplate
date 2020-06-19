@@ -1,22 +1,18 @@
 class CommandsManager {
-	/** @type {import('./client')} */
-	#client
-	/** @type {Object.<string, import('./command')>} */
-	#commands = {};
 
 	/**
 	 * @param {import('./client')} client 
 	 */
 	constructor(client) {
-		this.#client = client;
-		this.#commands = require('./commands').load(client);
+		this._client = client;
+		this._commands = require('./commands').load(client);
 	}
 
 	get client() {
-		return this.#client;
+		return this._client;
 	}
 	get commands() {
-		return this.#commands;
+		return this._commands;
 	}
 
 	/**

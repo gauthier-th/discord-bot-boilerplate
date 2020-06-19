@@ -1,22 +1,19 @@
 class EventsManager {
-	/** @type {import('./client')} */
-	#client
-	#events
 
 	/**
 	 * @param {import('./client')} client 
 	 */
 	constructor(client) {
-		this.#client = client;
-		this.#events = require('./events');
+		this._client = client;
+		this._events = require('./events');
 		handle(this);
 	}
 
 	get client() {
-		return this.#client;
+		return this._client;
 	}
 	get events() {
-		return this.#events;
+		return this._events;
 	}
 
 }

@@ -1,11 +1,10 @@
 const Command = require('../command.js');
 
 class PingCommand extends Command {
-	#client;
-	#name = "ping";
-	#aliases = ["lantence"];
-	#title = "Ping";
-	#description = "Affiche de la latence du bot";
+	_name = "ping";
+	_aliases = ["lantence"];
+	_title = "Ping";
+	_description = "Affiche de la latence du bot";
 
 	/** @param {import('./client')} client */
 	constructor(client) {

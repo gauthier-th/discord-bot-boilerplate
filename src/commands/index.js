@@ -17,7 +17,8 @@ module.exports.load = client => {
 			continue;
 
 		const name = fileData.join('');
-		returns[name] = new (require(__dirname + '/' + mod))(client);
+		const command = new (require(__dirname + '/' + mod))(client);
+		returns[command.name] = command;
 	}
 	return returns;
 }

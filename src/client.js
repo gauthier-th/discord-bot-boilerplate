@@ -4,48 +4,38 @@ const EventsManager = require('./events-manager');
 const CommandsManager = require('./commands-manager');
 
 class BotClient extends Discord.Client {
-	/** @type {import('../base-config')} */
-	#botConfig;
-	/** @type {EventsManager} */
-	#eventManager;
-	/** @type {CommandsManager} */
-	#commandManager;
-	/** @type {import('./messages')} */
-	#messages;
-	/** @type {import('./bot-config')} */
-	#config;
 
 	/**
-	 * @param {import('../base-config')} config 
+	 * @param {import('../base-config.json')} config 
 	 * @param  {Discord.ClientOptions} options 
 	 */
 	constructor(config, options) {
 		super(options);
-		this.#botConfig = config;
-		this.#eventManager = new EventsManager(this);
-		this.#commandManager = new CommandsManager(this);
-		this.#messages = require('./messages');
-		this.#config = require('./bot-config');
+		this._botConfig = config;
+		this._eventManager = new EventsManager(this);
+		this._commandManager = new CommandsManager(this);
+		this._messages = require('./messages');
+		this._config = require('./bot-config');
 		this.login();
 	}
 
 	get botConfig() {
-		return this.#botConfig;
+		return this._botConfig;
 	}
 	get prefix() {
-		return this.#config.prefix;
+		return this._config.prefix;
 	}
 	get eventManager() {
-		return this.#eventManager;
+		return this._eventManager;
 	}
 	get commandManager() {
-		return this.#commandManager;
+		return this._commandManager;
 	}
 	get messages() {
-		return this.#messages;
+		return this._messages;
 	}
 	get config() {
-		return this.#config;
+		return this._config;
 	}
 
 	login() {
