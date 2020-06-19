@@ -18,7 +18,7 @@ class HelpCommand extends Command {
 	 * @param {import('discord.js').Message} message 
 	 */
 	exec(command, args, message) {
-		message.channel.send(this.client.messages.COMMANDS.HELP(prefix));
+		message.channel.send(this.client.messages.COMMANDS.HELP(prefix, Object.values(this.client.commandManager.commands)));
 	}
 
 }

@@ -14,12 +14,12 @@ const messages = {
 	DEFAULT_FOOTER: defaultFooter,
 	ACTIVITY: "tester des trucs",
 	COMMANDS: {
-		HELP: prefix => {
+		HELP: (prefix, commands) => {
 			return {
 				embed: {
 					color: colors.BLUE,
 					title: "Aide du bot",
-					description: "`" + prefix + "ping` : affiche la latence du bot\n`" + prefix + "membercount` : affiche le nombre de membres",
+					description: commands.map(cmd => "`" + prefix + cmd.name + "` : " + cmd.description).join('\n'),
 					footer: defaultFooter,
 					timestamp: new Date()
 				}
