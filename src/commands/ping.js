@@ -4,7 +4,7 @@ class PingCommand extends Command {
 	_name = "ping";
 	_aliases = ["lantence"];
 	_title = "Ping";
-	_description = "Affiche de la latence du bot";
+	_description = "Affiche la latence du bot";
 
 	/** @param {import('./client')} client */
 	constructor(client) {
