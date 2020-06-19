@@ -1,5 +1,5 @@
-const Command = require('../command.js');
-
+const path = require('path');
+const Command = require(path.join(process.cwd(), 'src', 'command.js'));
 
 class MemberCountCommand extends Command {
 	_name = "membercount";

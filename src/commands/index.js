@@ -1,5 +1,5 @@
 const fs = require('fs');
-const modules = fs.readdirSync(__dirname);
+const subdirs = fs.readdirSync(__dirname);
 
 /**
  * @param {import('../client')} client 
@@ -7,18 +7,11 @@ const modules = fs.readdirSync(__dirname);
  */
 module.exports.load = client => {
 	const returns = {};
-	for (let mod of modules) {
-		if (mod === 'index.js')
+	for (let subdir of subdirs) {
+		if (subdir === 'index.js')
 			continue;
 
-		const fileData = mod.split('.');
-		const ext = fileData.splice(-1, 1)[0];
-		if (ext !== 'js')
-			continue;
-
-		const name = fileData.join('');
-		const command = new (require(__dirname + '/' + mod))(client);
-		returns[command.name] = command;
+		returns[subdir] = require(__dirname + '/' + subdir).load(client, subdir);
 	}
 	return returns;
 }

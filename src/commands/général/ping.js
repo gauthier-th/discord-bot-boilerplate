@@ -1,4 +1,5 @@
-const Command = require('../command.js');
+const path = require('path');
+const Command = require(path.join(process.cwd(), 'src', 'command.js'));
 
 class PingCommand extends Command {
 	_name = "ping";

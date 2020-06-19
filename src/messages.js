@@ -19,7 +19,7 @@ const messages = {
 				embed: {
 					color: colors.BLUE,
 					title: "Aide du bot",
-					description: commands.map(cmd => "`" + prefix + cmd.name + "` : " + cmd.description).join('\n'),
+					description: Object.keys(commands).map(category => ":white_small_square: Catégorie " + category + "\n" + Object.values(commands[category]).map(cmd => "`" + prefix + cmd.name + "` : " + cmd.description).join('\n')).join('\n'),
 					footer: defaultFooter,
 					timestamp: new Date()
 				}

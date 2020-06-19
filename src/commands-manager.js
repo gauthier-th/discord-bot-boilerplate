@@ -22,19 +22,15 @@ class CommandsManager {
 	 * @returns {boolean}
 	 */
 	execCommand(command, args, message) {
-		if (command.toLowerCase().trim() in this.commands) {
-			this.commands[command].exec(command, args, message);
-			return true;
-		}
-		else {
-			for (let cmd of Object.values(this.commands)) {
-				if (cmd.aliases.map(alias => alias.toLowerCase().trim()).includes(command.toLowerCase().trim())) {
+		for (let category of Object.keys(this.commands)) {
+			for (let cmd of Object.values(this.commands[category])) {3
+				if (cmd.name.toLowerCase().trim() === command.trim().toLowerCase() || cmd.aliases.map(alias => alias.toLowerCase().trim()).includes(command.toLowerCase().trim())) {
 					cmd.exec(command, args, message);
 					return true;
 				}
 			}
-			return false;
 		}
+		return false;
 	}
 
 }

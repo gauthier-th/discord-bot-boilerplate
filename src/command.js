@@ -1,8 +1,12 @@
 class Command {
 
-	/** @param {import('./client')} client */
-	constructor(client) {
+	/**
+	 * @param {import('./client')} client 
+	 * @param {string} category 
+	 **/
+	constructor(client, category) {
 		this._client = client;
+		this._category = category;
 	}
 
 	/**
@@ -11,6 +15,13 @@ class Command {
 	 **/
 	get client() {
 		return this._client;
+	}
+	/**
+	 * Get command category
+	 * @returns {string}
+	 **/
+	get category() {
+		return this._category;
 	}
 	/**
 	 * Get command name
