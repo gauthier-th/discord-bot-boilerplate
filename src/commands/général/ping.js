@@ -3,7 +3,7 @@ const Command = require(path.join(process.cwd(), 'src', 'command.js'));
 
 class PingCommand extends Command {
 	_name = "ping";
-	_aliases = ["lantence"];
+	_aliases = ["latence"];
 	_title = "Ping";
 	_description = "Affiche la latence du bot";
 
